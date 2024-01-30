@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Persistence.Paging;
+using Core.Persistence.Dynamic;
 
 namespace Core.Persistence.Repositories;
 

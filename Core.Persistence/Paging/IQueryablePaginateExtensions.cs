@@ -6,9 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.Persistence.Paging;
-
-public static class IQueryablePaginateExtensions //extention olduğu için static
+public static class IQueryablePaginateExtensions 
 {
+    /*
+    Tüm verileri çekip işlemek yerine veritabanından sadece belirli bir sayfa ve boyuttaki veri kümesini çekerek sayfalama yapıyoruz.
+    
+    */
     public static async Task<Paginate<T>> ToPaginateAsync<T>(
         this IQueryable<T> source,
         int index,

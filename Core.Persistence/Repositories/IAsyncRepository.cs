@@ -55,4 +55,22 @@ public interface IAsyncRepository<TEntity,TEntityId>  :IQuery<TEntity>
         CancellationToken cancellationToken = default
         );
 
+    //ilgili entity'i db'ye ekleme
+    Task<TEntity> AddAsync(TEntity entity);
+
+    //toplu ekleme
+    Task<ICollection<TEntity>> AddRangeAsync(ICollection<TEntity> entities);
+
+    //update
+    Task<TEntity> UpdateAsync(TEntity entity);
+
+    //toplu update
+    Task<ICollection<TEntity>> UpdateRangeAsync(ICollection<TEntity> entities);
+
+    //silme işlemi, parmanent kalıcı olarak silme durumunu soruyor. değer false ise soft delete yapıyoruz.
+    Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false);
+
+    //toplu silme işlemi, parmanent kalıcı olarak silme durumunu soruyor. değer false ise soft delete yapıyoruz.
+    Task<ICollection<TEntity>> DeleteRangeAsync(ICollection<TEntity> entities, bool permanent = false);
+
 }

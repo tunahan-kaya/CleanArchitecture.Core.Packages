@@ -13,7 +13,7 @@ public class ExceptionMiddleware
     private readonly RequestDelegate _next; //çalıştırlacak request yani method buradan geçicek
     private readonly HttpExceptionHandler _httpExceptionHandler;
 
-    public ExceptionMiddleware(RequestDelegate next, HttpExceptionHandler httpExceptionHandler)
+    public ExceptionMiddleware(RequestDelegate next)
     {
         _next = next;
         _httpExceptionHandler = new HttpExceptionHandler();
